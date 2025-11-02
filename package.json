@@ -1,0 +1,23 @@
+{
+  "name": "swaglabsautomation",
+  "version": "1.0.0",
+  "description": "Automation testing project for Swag Labs using Playwright and JavaScript.",
+  "homepage": "https://github.com/shohelranashaon/SwagLabsAutomation#readme",
+  "bugs": {
+    "url": "https://github.com/shohelranashaon/SwagLabsAutomation/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shohelranashaon/SwagLabsAutomation.git"
+  },
+  "license": "ISC",
+  "author": "Md Shohel Rana Shaon",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "playwright": "^1.56.1"
+  }
+}
