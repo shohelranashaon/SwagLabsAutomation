@@ -16,5 +16,15 @@ export class Inventory{
         await this.locator.buttonBurgerMenu.click();
     }
 
+    async resetLink(){
+
+        await this.locator.appResetLink.click();
+    }
+
+    async closeMenu(){
+
+        await this.locator.closeBurgerMenu.click();
+    }
+
 
 };

@@ -11,6 +11,7 @@ test.describe("Swag Labs For Automation", () => {
     context = await browser.newContext();
     page = await context.newPage();
     login = new Login(page);
+   
     await login.openUrl();
     await login.enterUserName("standard_user");
     await login.enterPassword("secret_sauce");
@@ -24,16 +25,23 @@ test.describe("Swag Labs For Automation", () => {
 
     test("Hamburger menu Open Succesfully", async()=>{
 
-        let  inventory = new Inventory(page);
+        const  inventory = new Inventory(page);
         await inventory.hamburgerMenu();
         //await page.pause();
      });
 
-        test("", async ()=>{
-
-
-
+        test("Reset App state Successfully", async ()=>{
+          const  inventory = new Inventory(page);
+          await  inventory.resetLink();
         });
+
+
+        test("Close Humburger Menu Successfully", async()=>{
+
+          const  inventory = new Inventory(page);
+          await  inventory.closeMenu();
+
+        })
   
 
 
