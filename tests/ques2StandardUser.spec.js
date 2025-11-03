@@ -1,17 +1,46 @@
+import { test, expect } from "@playwright/test";
 import { Login } from "../pages/loginPage";
+import { Inventory } from "../pages/inventoryPage";
 
-import { test} from '@playwright/test';
+test.describe.configure({ mode: "serial" });
 
-test("Standard user logged in successfully with valid credentials.",async({page})=>{
+test.describe("Swag Labs For Automation", () => {
+  let context, page, login;
 
-    const object1 = new Login(page);
+  test.beforeAll(async ({ browser }) => {
+    context = await browser.newContext();
+    page = await context.newPage();
+    login = new Login(page);
+    await login.openUrl();
+    await login.enterUserName("standard_user");
+    await login.enterPassword("secret_sauce");
+    await login.buttonLogin();
+    // await page.pause();
+    await expect(page).toHaveURL(/inventory/);
+  });
 
-    await object1.openUrl();
-    await object1.enterUserName("standard_user");
-    await object1.enterPassword("secret_sauce");
-    await object1.buttonLogin();
-})
+
+        
+
+    test("Hamburger menu Open Succesfully", async()=>{
+
+        let  inventory = new Inventory(page);
+        await inventory.hamburgerMenu();
+        //await page.pause();
+     });
+
+        test("", async ()=>{
+
+
+
+        });
+  
 
 
 
 
+
+//   test.afterAll(async () => {
+//     await context.close();
+//   });
+});
