@@ -26,7 +26,6 @@ export class Login{
         await this.locator.userPassword.fill(password);
     }
 
-
     async buttonLogin(){
 
         await this.locator.loginButton.click();
@@ -34,12 +33,7 @@ export class Login{
 
 
     async verifyErrorMessage(){
-
-
         await expect(this.locator.errorMessage).toHaveText("Epic sadface: Sorry, this user has been locked out.");
     }
-
-
-
 
 }
