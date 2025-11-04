@@ -5,13 +5,13 @@ import { Inventory } from "../pages/inventoryPage";
 test.describe.configure({ mode: "serial" });
 
 test.describe("Swag Labs For Automation", () => {
-  let context, page, login;
+  let context, page, login,inventory;
 
   test.beforeAll(async ({ browser }) => {
     context = await browser.newContext();
     page = await context.newPage();
     login = new Login(page);
-   
+    inventory = new Inventory(page);
     await login.openUrl();
     await login.enterUserName("standard_user");
     await login.enterPassword("secret_sauce");
@@ -24,25 +24,42 @@ test.describe("Swag Labs For Automation", () => {
         
 
     test("Hamburger menu Open Succesfully", async()=>{
-
-        const  inventory = new Inventory(page);
         await inventory.hamburgerMenu();
         //await page.pause();
      });
 
         test("Reset App state Successfully", async ()=>{
-          const  inventory = new Inventory(page);
           await  inventory.resetLink();
         });
 
 
         test("Close Humburger Menu Successfully", async()=>{
-
-          const  inventory = new Inventory(page);
           await  inventory.closeMenu();
 
         })
-  
+        
+        test("Add 3 Item to the cart Successfully", async()=>{
+          await inventory.addToCartItem1();
+          await inventory.addToCartItem2();
+          await inventory.addToCartItem3();
+          // await page.pause();
+        })
+
+
+        test("Shoping Cart Page Open Succefully", async ()=>{
+
+          await inventory.shopingCartPage();
+          
+        })
+
+        test("Navigate Checkout Page Successfully", async ()=>{
+          await inventory.checkoutPage();
+          await page.pause();
+
+        })
+        
+
+
 
 
 

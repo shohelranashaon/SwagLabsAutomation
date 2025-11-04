@@ -14,6 +14,14 @@ export default class Locators{
         this.buttonBurgerMenu= this.page.locator("//button[@id='react-burger-menu-btn']");
         this.appResetLink =this.page.locator("//a[@id='reset_sidebar_link']");
         this.closeBurgerMenu = this.page.locator("//button[@id='react-burger-cross-btn']");
+        this.addToCartButton1 = this.page.locator("//button[@name='add-to-cart-sauce-labs-backpack']");
+        this.addToCartButton2 = this.page.locator("//button[@name='add-to-cart-sauce-labs-bike-light']");
+        this.addToCartButton3 = this.page.locator("//button[@name='add-to-cart-sauce-labs-bolt-t-shirt']");
+
+
+        this.shoppingCartIcon = this.page.locator("//a[@class='shopping_cart_link']");
+
+        this.checkoutButton = this.page.locator("//button[@name='checkout']");
     }
 
 

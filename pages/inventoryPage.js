@@ -26,5 +26,31 @@ export class Inventory{
         await this.locator.closeBurgerMenu.click();
     }
 
+    async addToCartItem1(){
+        await this.locator.addToCartButton1.click();
+
+
+    }
+
+    async addToCartItem2(){
+        await this.locator.addToCartButton2.click();
+
+        
+    }
+
+    async addToCartItem3(){
+        await this.locator.addToCartButton3.click();   
+    }
+
+    async shopingCartPage(){
+
+        await this.locator.shoppingCartIcon.click();
+    }
+
+    async checkoutPage(){
+
+        await this.locator.checkoutButton.click();
+    }
+
 
 };
