@@ -22,6 +22,13 @@ export default class Locators{
         this.shoppingCartIcon = this.page.locator("//a[@class='shopping_cart_link']");
 
         this.checkoutButton = this.page.locator("//button[@name='checkout']");
+
+        this.enterFirstName = this.page.locator("//input[@name='firstName']");
+        this.enterLastName = this.page.locator("//input[@name='lastName']");
+        this.enterZipCode = this.page.locator("//input[@id='postal-code']");
+        this.progressContinue =this.page.locator("//input[@id='continue']");
+
+
     }
 
 
