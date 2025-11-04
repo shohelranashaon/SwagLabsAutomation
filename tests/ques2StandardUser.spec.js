@@ -1,17 +1,19 @@
 import { test, expect } from "@playwright/test";
 import { Login } from "../pages/loginPage";
 import { Inventory } from "../pages/inventoryPage";
+import { Checkout } from "../pages/checkoutPage";
 
 test.describe.configure({ mode: "serial" });
 
 test.describe("Swag Labs For Automation", () => {
-  let context, page, login,inventory;
+  let context, page, login,inventory,checkout;
 
   test.beforeAll(async ({ browser }) => {
     context = await browser.newContext();
     page = await context.newPage();
     login = new Login(page);
     inventory = new Inventory(page);
+    checkout = new Checkout(page);
     await login.openUrl();
     await login.enterUserName("standard_user");
     await login.enterPassword("secret_sauce");
@@ -54,10 +56,23 @@ test.describe("Swag Labs For Automation", () => {
 
         test("Navigate Checkout Page Successfully", async ()=>{
           await inventory.checkoutPage();
-          await page.pause();
+          
 
         })
-        
+
+        test (" Fill Customer name and zip code Successfully", async()=>{
+
+          await checkout.fillUserInformation();
+          await page.pause();
+        })
+
+
+        test("Go to Final Checkout Page Successfully", async()=>{
+
+          await checkout.continueToFinalCheckoutPage();
+          await page.pause();
+        })
+
 
 
 
