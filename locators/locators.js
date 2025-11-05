@@ -28,6 +28,10 @@ export default class Locators{
         this.enterZipCode = this.page.locator("//input[@id='postal-code']");
         this.progressContinue =this.page.locator("//input[@id='continue']");
 
+        this.itemName1 =this.page.locator("//div[text()='Sauce Labs Backpack']");
+        this.itemName2 =this.page.locator("//div[text()='Sauce Labs Bike Light']");
+        this.itemName3 =this.page.locator("//div[text()='Sauce Labs Bolt T-Shirt']");
+
 
     }
 

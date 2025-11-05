@@ -69,6 +69,13 @@ test.describe("Swag Labs For Automation", () => {
 
         test("Go to Final Checkout Page Successfully", async()=>{
           await checkout.continueToFinalCheckoutPage();
+          
+        })
+
+
+        test("Verifiy 3 products Name Successfully", async()=>{
+
+          await checkout.verifyProductsNames();
           await page.pause();
         })
 
