@@ -38,6 +38,7 @@ To run this project, make sure you have:
 - **Node.js** version **16+**
 - **Java** version **8+** (required for Allure commandline)
 
-Install Allure command line globally:
-```bash
-npm install -g allure-commandline
+
+## Run Locally 
+```bash 
+git clone https://github.com/shohelranashaon/SwagLabsAutomation.git
