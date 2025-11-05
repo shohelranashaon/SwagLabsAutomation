@@ -38,6 +38,40 @@ To run this project, make sure you have:
 - **Node.js** version **16+**
 - **Java** version **8+** (required for Allure commandline)
 
-Install Allure command line globally:
+
+## Run Locally 
+Clone The Project
+
+```bash 
+git clone https://github.com/shohelranashaon/SwagLabsAutomation.git
+
+```
+Change Project Directory
+
+```bash 
+cd SwagLabsAutomation
+```
+Install dependencies
 ```bash
-npm install -g allure-commandline
+npm install
+```
+
+Run Single File 
+---
+**Test File 1** 
+```bash
+npx playwright test tests/ques1LockOutUser.spec.js
+```
+**Test File 2**
+```bash
+npx playwright test tests/ques2StandardUser.spec.js
+```
+**Test File 3**
+```bash
+npx playwright test tests/ques3GlitchUser.spec.js
+```
+
+## Run Sequentially All test file
+```bash
+npx playwright test --headed
+```
