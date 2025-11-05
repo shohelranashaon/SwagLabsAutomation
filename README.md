@@ -57,20 +57,20 @@ npm install
 ```
 
 Run Single File 
-**ques1LockOutUser.spec.js** file
+**Test File 1** file
 ```bash
 npx playwright test tests/ques1LockOutUser.spec.js
 ```
-**ques2StandardUser.spec.js**
+**Test File 2**
 ```bash
 npx playwright test tests/ques2StandardUser.spec.js
 ```
-**ques3GlitchUser.spec.js**
+**Test File 3**
 ```bash
 npx playwright test tests/ques3GlitchUser.spec.js
 ```
 
-## Run Sequencially All test file
+## Run Sequentially All test file
 ```bash
 npx playwright test --headed
 ```
