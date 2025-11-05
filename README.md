@@ -40,12 +40,37 @@ To run this project, make sure you have:
 
 
 ## Run Locally 
+Clone The Project
+
 ```bash 
 git clone https://github.com/shohelranashaon/SwagLabsAutomation.git
 
 ```
+Change Project Directory
 
-## Change Project Directory
 ```bash 
 cd SwagLabsAutomation
+```
+Install dependencies
+```bash
+npm install
+```
+
+Run Single File 
+**ques1LockOutUser.spec.js** file
+```bash
+npx playwright test tests/ques1LockOutUser.spec.js
+```
+**ques2StandardUser.spec.js**
+```bash
+npx playwright test tests/ques2StandardUser.spec.js
+```
+**ques3GlitchUser.spec.js**
+```bash
+npx playwright test tests/ques3GlitchUser.spec.js
+```
+
+## Run Sequencially All test file
+```bash
+npx playwright test --headed
 ```
