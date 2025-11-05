@@ -63,12 +63,11 @@ test.describe("Swag Labs For Automation", () => {
         test (" Fill Customer name and zip code Successfully", async()=>{
 
           await checkout.fillUserInformation();
-          await page.pause();
+          // await page.pause();
         })
 
 
         test("Go to Final Checkout Page Successfully", async()=>{
-
           await checkout.continueToFinalCheckoutPage();
           await page.pause();
         })
