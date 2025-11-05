@@ -43,6 +43,9 @@ To run this project, make sure you have:
 ```bash 
 git clone https://github.com/shohelranashaon/SwagLabsAutomation.git
 
+```
+
 ## Change Project Directory
 ```bash 
 cd SwagLabsAutomation
+```
