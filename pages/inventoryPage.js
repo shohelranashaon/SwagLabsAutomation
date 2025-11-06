@@ -42,6 +42,10 @@ export class Inventory{
         await this.locator.addToCartButton3.click();   
     }
 
+    async addToCartItem4(){
+        await this.locator.addToCartButton4.click();   
+    }
+
     async shopingCartPage(){
 
         await this.locator.shoppingCartIcon.click();
@@ -55,6 +59,14 @@ export class Inventory{
     async clickButtonLogout(){
 
         await this.locator.logoutButton.click();
+    }
+
+    async shortingProducts(){
+
+        await this.locator.shortProducts.click();
+        await this.page.waitForTimeout(5000);
+        await this.locator.shortProducts.selectOption('za');
+        // await this.page.pause();
     }
 
 
