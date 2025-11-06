@@ -26,13 +26,22 @@ export class Checkout{
         const item1 = await this.locator.itemName1.textContent();
         const item2 = await this.locator.itemName2.textContent();
         const item3 = await this.locator.itemName3.textContent();
+        const item4 = await this.locator.itemName4.textContent();
         expect(item1).toBe("Sauce Labs Backpack");
         expect(item2).toBe("Sauce Labs Bike Light");
         expect(item3).toBe("Sauce Labs Bolt T-Shirt");
+        expect(item4).toBe("Test.allTheThings() T-Shirt (Red)");
 
-}
-  async clickButtonFinish(){
-    await this.locator.finishButton.click();
-  }
+        }
+
+    async verifyProductsNames1(){
+        const item4 = await this.locator.itemName4.textContent();
+        expect(item4).toBe("Test.allTheThings() T-Shirt (Red)");
+        }
+
+
+    async clickButtonFinish(){
+        await this.locator.finishButton.click();
+     }
 
 }

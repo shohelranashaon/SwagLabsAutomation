@@ -32,14 +32,18 @@ export default class Locators{
         this.itemName1 =this.page.locator("//div[text()='Sauce Labs Backpack']");
         this.itemName2 =this.page.locator("//div[text()='Sauce Labs Bike Light']");
         this.itemName3 =this.page.locator("//div[text()='Sauce Labs Bolt T-Shirt']");
+        this.itemName4 =this.page.locator("//div[text()='Test.allTheThings() T-Shirt (Red)']");
 
         this.finishButton= this.page.locator("//button[@id='finish']");
 
         this.confirmationMessage =this.page.locator("//h2[text()='Thank you for your order!']");
 
         this.buttonBacktoHome =this.page.locator("//button[@id='back-to-products']");
-        
 
+
+        this.shortProducts = this.page.locator("//select[@data-test='product-sort-container']");
+
+        this.addToCartButton4 = this.page.locator("//button[@id='add-to-cart-test.allthethings()-t-shirt-(red)']");
 
     }
 

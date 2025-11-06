@@ -1,0 +1,110 @@
+import { test, expect } from "@playwright/test";
+import { Login } from "../pages/loginPage";
+import { Inventory } from "../pages/inventoryPage";
+import { Checkout } from "../pages/checkoutPage";
+import { ConfirmationPage } from "../pages/confirmationPage";
+
+test.describe.configure({ mode: "serial" });
+
+test.describe("Swag Labs For Automation", () => {
+  let context, page, login,inventory,checkout,confirmation;
+
+  test.beforeAll(async ({ browser }) => {
+    context = await browser.newContext();
+    page = await context.newPage();
+    login = new Login(page);
+    inventory = new Inventory(page);
+    checkout = new Checkout(page);
+    confirmation = new ConfirmationPage(page);
+    await login.openUrl();
+    await login.enterUserName("performance_glitch_user");
+    await login.enterPassword("secret_sauce");
+    await login.buttonLogin();
+    await expect(page).toHaveURL(/inventory/);
+  });
+
+        test("Reset App state Successfully", async ()=>{
+            await  inventory.hamburgerMenu();
+            await  inventory.resetLink();
+            await  inventory.closeMenu();
+        });
+
+        test("Select filter by name Z to A  Succecfully", async()=>{
+          await inventory.shortingProducts();
+        })
+
+        test("Add First Item from Z to A filtering  to the cart Successfully", async()=>{
+          
+          await inventory.addToCartItem4();
+          
+        })
+
+        test("Shoping Cart Page Open Succefully", async ()=>{
+
+          await inventory.shopingCartPage();
+          
+        })
+
+
+        test("Navigate Checkout Page Successfully", async ()=>{
+          await inventory.checkoutPage();
+          
+
+        })
+
+        test(" Fill Customer name and zip code Successfully", async()=>{
+
+          await checkout.fillUserInformation();
+          
+        })
+
+
+        test("Go to Final Checkout Page Successfully", async()=>{
+          await checkout.continueToFinalCheckoutPage();
+          
+          
+        })
+
+
+        test("Verifiy  products Name Successfully", async()=>{
+
+          await checkout.verifyProductsNames1();
+          await page.pause();
+        })
+
+        test("Finish Button Work Successfully on CheckOut Page", async()=>{
+
+          await checkout.clickButtonFinish();
+          })
+          
+
+        test ("Verify SucceccSully order Completion Message", async()=>{
+
+          await confirmation.verifyConfirmationMessage();
+          
+        })
+
+
+        test("Reset App state", async ()=>{
+          await confirmation.backHomePage();
+          await inventory.hamburgerMenu();
+          await  inventory.resetLink();
+          await page.pause();
+          
+        });
+
+         test.afterAll("Logout Successfully",async () => {
+            await inventory.clickButtonLogout();
+            await page.pause();
+  });
+
+
+
+
+
+
+
+
+
+ 
+});
