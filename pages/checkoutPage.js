@@ -17,8 +17,6 @@ export class Checkout{
         await this.locator.enterLastName.fill("Rana");
         await this.locator.enterZipCode.fill("1216");
     }
-
-
     async continueToFinalCheckoutPage(){
         await this.locator.progressContinue.click();
     }
@@ -33,6 +31,8 @@ export class Checkout{
         expect(item3).toBe("Sauce Labs Bolt T-Shirt");
 
 }
-
+  async clickButtonFinish(){
+    await this.locator.finishButton.click();
+  }
 
 }

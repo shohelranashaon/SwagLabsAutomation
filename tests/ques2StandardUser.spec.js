@@ -2,11 +2,12 @@ import { test, expect } from "@playwright/test";
 import { Login } from "../pages/loginPage";
 import { Inventory } from "../pages/inventoryPage";
 import { Checkout } from "../pages/checkoutPage";
+import { ConfirmationPage } from "../pages/confirmationPage";
 
 test.describe.configure({ mode: "serial" });
 
 test.describe("Swag Labs For Automation", () => {
-  let context, page, login,inventory,checkout;
+  let context, page, login,inventory,checkout,confirmation;
 
   test.beforeAll(async ({ browser }) => {
     context = await browser.newContext();
@@ -14,6 +15,7 @@ test.describe("Swag Labs For Automation", () => {
     login = new Login(page);
     inventory = new Inventory(page);
     checkout = new Checkout(page);
+    confirmation = new ConfirmationPage(page);
     await login.openUrl();
     await login.enterUserName("standard_user");
     await login.enterPassword("secret_sauce");
@@ -60,7 +62,7 @@ test.describe("Swag Labs For Automation", () => {
 
         })
 
-        test (" Fill Customer name and zip code Successfully", async()=>{
+        test(" Fill Customer name and zip code Successfully", async()=>{
 
           await checkout.fillUserInformation();
           // await page.pause();
@@ -76,17 +78,41 @@ test.describe("Swag Labs For Automation", () => {
         test("Verifiy 3 products Name Successfully", async()=>{
 
           await checkout.verifyProductsNames();
-          await page.pause();
+          // await page.pause();
+        })
+
+        test("Finish Button Work Successfully on CheckOut Page", async()=>{
+
+          await checkout.clickButtonFinish();
+          })
+          
+
+        test ("Verify SucceccSully order Completion Message", async()=>{
+
+          await confirmation.verifyConfirmationMessage();
+          
         })
 
 
+        test("Reset App state", async ()=>{
+          await confirmation.backHomePage();
+          await inventory.hamburgerMenu();
+          await  inventory.resetLink();
+          
+        });
+
+         test.afterAll("Logout Successfully",async () => {
+            await inventory.clickButtonLogout();
+            await page.pause();
+  });
 
 
 
 
 
 
-//   test.afterAll(async () => {
-//     await context.close();
-//   });
+
+
+
+ 
 });
