@@ -52,5 +52,10 @@ export class Inventory{
         await this.locator.checkoutButton.click();
     }
 
+    async clickButtonLogout(){
+
+        await this.locator.logoutButton.click();
+    }
+
 
 };

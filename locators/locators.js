@@ -8,6 +8,7 @@ export default class Locators{
         this.userName= this.page.locator("//input[@id='user-name']");
         this.userPassword = this.page.locator("//input[@id='password']");
         this.loginButton = this.page.locator("//input[@id='login-button']");
+        this.logoutButton = this.page.locator("//a[@id='logout_sidebar_link']");
         this.errorMessage = this.page.locator("//h3[@data-test='error']");
 
         // this.errorMessage = this.page.locator("//span[text()='Epic sadface: Sorry, this user has been locked out.']");[Need to Discuss with Ridoy vaiya Why not working]
@@ -31,6 +32,13 @@ export default class Locators{
         this.itemName1 =this.page.locator("//div[text()='Sauce Labs Backpack']");
         this.itemName2 =this.page.locator("//div[text()='Sauce Labs Bike Light']");
         this.itemName3 =this.page.locator("//div[text()='Sauce Labs Bolt T-Shirt']");
+
+        this.finishButton= this.page.locator("//button[@id='finish']");
+
+        this.confirmationMessage =this.page.locator("//h2[text()='Thank you for your order!']");
+
+        this.buttonBacktoHome =this.page.locator("//button[@id='back-to-products']");
+        
 
 
     }
