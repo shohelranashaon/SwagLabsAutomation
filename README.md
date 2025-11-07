@@ -79,11 +79,11 @@ npx playwright test --headed
 **Step 1: Install Allure dependencies**
 - For Allure playwright
 ```bash
-npm i allure-playwright --well-dev
+npm i allure-playwright --save-dev
 ```
 For Allure Command Line
 ```bash
-npm i allure-commandline --well-dev
+npm i allure-commandline --save-dev
 ```
 **Step 2: Update playwright.config.js**
 ```bash
