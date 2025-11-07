@@ -75,3 +75,29 @@ npx playwright test tests/ques3GlitchUser.spec.js
 ```bash
 npx playwright test --headed
 ```
+# Allure Report Setup 
+**Step 1: Install Allure dependencies**
+### For Allure playwright
+```bash
+npm i allure-playwright --well-dev
+```
+**Step 2: For Allure Command Line**
+```bash
+npm i allure-commandline --well-dev
+```
+**Step 3: Update playwright.config.js**
+reporter: ['allure-playwright'],
+
+**Step 4: Run tests and generate report**
+```bash
+npx playwright test --headed
+
+```
+**Step 5: Generate  Allure report**
+```bash
+allure generate allure-results --clean
+```
+**Step 6: Open Allure report**
+```bash
+allure Open
+```
