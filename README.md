@@ -77,7 +77,7 @@ npx playwright test --headed
 ```
 ## Allure Report Setup 
 **Step 1: Install Allure dependencies**
-For Allure playwright
+- For Allure playwright
 ```bash
 npm i allure-playwright --well-dev
 ```
