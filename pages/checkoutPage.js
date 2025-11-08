@@ -1,6 +1,4 @@
 import Locators from "../locators/locators";
-import { Inventory } from "./inventoryPage";
-import { Login } from "./loginPage";
 import { expect } from "playwright/test";
 
 export class Checkout{
@@ -29,16 +27,35 @@ export class Checkout{
         expect(item1).toBe("Sauce Labs Backpack");
         expect(item2).toBe("Sauce Labs Bike Light");
         expect(item3).toBe("Sauce Labs Bolt T-Shirt");
+        console.log("Product verification successful:");
+        console.log("Product 1:", item1.trim());
+        console.log("Product 2:", item2.trim());
+        console.log("Product 3:", item3.trim());
+        
         }
 
     async verifyProductsNames1(){
         const item4 = await this.locator.itemName4.textContent();
         expect(item4).toBe("Test.allTheThings() T-Shirt (Red)");
+        console.log("Product verification successful:");
+        console.log("Product 1:", item4.trim());
         }
 
 
     async clickButtonFinish(){
         await this.locator.finishButton.click();
      }
+
+     async verifyTotalPrice() {
+
+        const prices = await this.page.locator(".inventory_item_price").allTextContents();
+        const numericPrices = prices.map(price => parseFloat(price.replace("$", "")));
+        const expectedSubTotal = numericPrices.reduce((a, b) => a + b, 0);
+        const subTotalText = await this.locator.subTotal.textContent();
+        const displayedSubTotal = parseFloat(subTotalText.replace("Item total: $", "").trim());
+        expect(displayedSubTotal).toBeCloseTo(expectedSubTotal, 2);
+        console.log("Expected Subtotal:", expectedSubTotal);
+        console.log("Displayed Subtotal on Page:", displayedSubTotal);
+  }
 
 }

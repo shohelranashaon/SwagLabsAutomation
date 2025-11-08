@@ -13,8 +13,9 @@ export class ConfirmationPage{
 
     async verifyConfirmationMessage(){
 
-       const message = await this.locator.confirmationMessage.textContent();
-       expect(message).toBe("Thank you for your order!");
+        const message = await this.locator.confirmationMessage.textContent();
+        expect(message).toBe("Thank you for your order!");
+        console.log("Display Message :", message.trim());
 
     }
 

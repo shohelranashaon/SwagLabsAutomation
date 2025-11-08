@@ -1,0 +1,5 @@
+Product verification successful:
+Product 1: Test.allTheThings() T-Shirt (Red)
+Expected Subtotal: 15.99
+Displayed Subtotal on Page: 15.99
+Display Message : Thank you for your order!

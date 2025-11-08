@@ -60,15 +60,15 @@ Run Single File
 ---
 **Test File 1** 
 ```bash
-npx playwright test tests/ques1LockOutUser.spec.js
+npx playwright test tests/ques1LockOutUser.spec.js --headed
 ```
 **Test File 2**
 ```bash
-npx playwright test tests/ques2StandardUser.spec.js
+npx playwright test tests/ques2StandardUser.spec.js --headed
 ```
 **Test File 3**
 ```bash
-npx playwright test tests/ques3GlitchUser.spec.js
+npx playwright test tests/ques3GlitchUser.spec.js --headed
 ```
 
 ## Run Sequentially All test file
@@ -101,5 +101,5 @@ allure generate allure-results --clean
 ```
 **Step 5: Open Allure report**
 ```bash
-allure Open
+allure open
 ```

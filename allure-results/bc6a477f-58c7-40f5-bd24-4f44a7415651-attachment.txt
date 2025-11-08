@@ -1,0 +1,7 @@
+Product verification successful:
+Product 1: Sauce Labs Backpack
+Product 2: Sauce Labs Bike Light
+Product 3: Sauce Labs Bolt T-Shirt
+Expected Subtotal: 55.97
+Displayed Subtotal on Page: 55.97
+Display Message : Thank you for your order!

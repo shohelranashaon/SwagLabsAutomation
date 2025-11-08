@@ -24,7 +24,7 @@ test.describe("Swag Labs For Automation", () => {
     await expect(page).toHaveURL(/inventory/);
   });
 
-    test("Veify Products Name and Verify Confirmation Message", async()=>{
+    test("Veify Products Name,Total price and Verify Confirmation Message", async()=>{
         await inventory.hamburgerMenu();
         await inventory.resetLink();
         await inventory.closeMenu();
@@ -36,6 +36,7 @@ test.describe("Swag Labs For Automation", () => {
         await checkout.fillUserInformation();
         await checkout.continueToFinalCheckoutPage();
         await checkout.verifyProductsNames();
+        await checkout.verifyTotalPrice();
         await checkout.clickButtonFinish();
         await confirmation.verifyConfirmationMessage();
         await confirmation.backHomePage();
@@ -50,6 +51,29 @@ test.describe("Swag Labs For Automation", () => {
   });
  
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
