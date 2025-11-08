@@ -23,7 +23,7 @@ test.describe("Swag Labs For Automation", () => {
     await expect(page).toHaveURL(/inventory/);
   });
 
-        test("Reset App state Successfully", async ()=>{
+        test("Veify Product Name,Total price and Verify Confirmation Message", async ()=>{
             await inventory.hamburgerMenu();
             await inventory.resetLink();
             await inventory.closeMenu();
@@ -34,21 +34,56 @@ test.describe("Swag Labs For Automation", () => {
             await checkout.fillUserInformation();
             await checkout.continueToFinalCheckoutPage();
             await checkout.verifyProductsNames1();
+            await checkout.verifyTotalPrice();
             await checkout.clickButtonFinish();
             await confirmation.verifyConfirmationMessage();
             await confirmation.backHomePage();
             await inventory.hamburgerMenu();
             await inventory.resetLink();
-            await page.pause();
+            // await page.pause();
         });
 
 
          test.afterAll("Logout Successfully",async () => {
             await inventory.clickButtonLogout();
-            await page.pause();
+            // await page.pause();
   });
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

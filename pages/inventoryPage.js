@@ -64,7 +64,7 @@ export class Inventory{
     async shortingProducts(){
 
         await this.locator.shortProducts.click();
-        await this.page.waitForTimeout(5000);
+        await this.page.waitForTimeout(3000);
         await this.locator.shortProducts.selectOption('za');
         // await this.page.pause();
     }

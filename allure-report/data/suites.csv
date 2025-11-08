@@ -1,4 +1,4 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","2901","Error Message Verified Succecfully","chromium","Fri Nov 07 00:48:36 GMT+06:00 2025","passed","Fri Nov 07 00:48:39 GMT+06:00 2025","","ques1LockOutUser.spec.js","",""
-"","17575","Reset App state Successfully","chromium","Fri Nov 07 00:48:36 GMT+06:00 2025","passed","Fri Nov 07 00:48:54 GMT+06:00 2025","Swag Labs For Automation","ques3GlitchUser.spec.js","",""
-"","2692","Veify Products Name and Verify Confirmation Message","chromium","Fri Nov 07 00:48:36 GMT+06:00 2025","passed","Fri Nov 07 00:48:39 GMT+06:00 2025","Swag Labs For Automation","ques2StandardUser.spec.js","",""
+"","2644","Veify Products Name,Total price and Verify Confirmation Message","chromium","Sat Nov 08 14:01:01 GMT+06:00 2025","passed","Sat Nov 08 14:01:04 GMT+06:00 2025","Swag Labs For Automation","ques2StandardUser.spec.js","",""
+"","1947","Error Message Verified Succecfully","chromium","Sat Nov 08 14:01:01 GMT+06:00 2025","passed","Sat Nov 08 14:01:03 GMT+06:00 2025","","ques1LockOutUser.spec.js","",""
+"","15677","Veify Product Name,Total price and Verify Confirmation Message","chromium","Sat Nov 08 14:01:01 GMT+06:00 2025","passed","Sat Nov 08 14:01:17 GMT+06:00 2025","Swag Labs For Automation","ques3GlitchUser.spec.js","",""
